@@ -1,0 +1,20 @@
+SELECT названия нужных полей FROM название таблицы WHERE условие выборки 
+
+SELECT- Инструкция которая извлекает информацию из базы данных
+Например:
+SELECT NAME, SALES, QUATA, (SALES - QUOTA)
+	FROM SALESREPS// Вычисляется сумма котораю делает каждый из операторов по продаже!
+INSERT -  Добавляет данные в соответствующую таблицу данных
+Например: INSERT INTO OFFICES (CITY, REGION, TARGET, SALES, OFFICE)
+		VALUES(‘Dallas’, ‘Western’, 275000.00, 0.00, 23)
+row inserted.
+
+DELETE -Удаляет данные из таблицы
+Например:
+DELETE FROM CUSTOMERS
+  where company = ’ Acme Industries ’//Где  Acme Industries название удаляемой компании из базы данных.
+row deleted
+
+
+UPDATE- Обновление данных в СУБД
+CREATE TABLE- Определяет новую таблицу для данных о товаре
