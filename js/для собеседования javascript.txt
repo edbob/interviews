@@ -624,3 +624,25 @@ REST- Representational State Transfer — «передача состояния
 	5. Слои
 	6. Код по требованию (необязательное ограничение)
 
+<--
+Раздница между ES5 and ES6
+Разница между ES5 and ES6
+let var
+let- предоставляется для того чтобы объявление переменных 
+стали более интуитивным!
+
+например:
+var buttons =docement.querySelectorAll('button');
+for(var i= 0; i < buttons.length; i++){//в таком варианте будет
+//выводится 5
+//если поставить let вместо var тогда к каждому кнопке выведется
+//свое значение
+var button =buttons[i];
+buttons.innerText=i;
+button.onclick =function(e){
+consol.log(i);
+ }
+}
+
+-->
+
