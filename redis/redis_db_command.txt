@@ -6,6 +6,5 @@ set mykey chtoto записываем значение в таблицу mykey  "chtoto"
 get mykey проверяем запись
 /etc/init.d/redis-server -запуск сервера для это нужны root права!
  /etc/init.d/redis-server  start - стартуем сервер
-service redis-server restart
-
+service redis-server restart -Перезагрузка сервера
 Redis Destop Manager десктопное администрирования Redisa
