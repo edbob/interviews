@@ -1,0 +1,10 @@
+redis-cli ping
+redis-cli
+ ping
+ set mykey somevalue -создаем базу клуч значение таблица с именем mykey 
+set mykey chtoto записываем значение в таблицу mykey  "chtoto"
+get mykey проверяем запись
+/etc/init.d/redis-server -запуск сервера для это нужны root права!
+ /etc/init.d/redis-server  start - стартуем сервер
+
+Redis Destop Manager десктопное администрирования Redisa
