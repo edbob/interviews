@@ -5,6 +5,6 @@ redis-cli
 set mykey chtoto 
 get mykey 
 /etc/init.d/redis-server 
- /etc/init.d/redis-server 
+ /etc/init.d/redis-server start
 service redis-server restart 
 Redis Destop Manager
