@@ -1,0 +1,4 @@
+CSS Selectors
+.class- Selects all elements with class
+#id-    Selects the element with id
+*-      Selects all elements

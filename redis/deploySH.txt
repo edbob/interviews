@@ -1,4 +1,4 @@
-Чтобы пользоватся db redis на сервере через ssh можно попробовать 
+﻿Чтобы пользоватся db redis на сервере через ssh можно попробовать 
 использовать файл деплоя deploy.sh в него указываем соеденение :
 ssh -f -N -L 6379:localhost:6379 -p 22 nameserver@xxx.xxx.x.XXX
 и указываем в терминале команду start deploy.sh пишем пароль и вуаля, 
@@ -11,3 +11,15 @@ deploy.sh
   forever stop index.js;
   forever start index.js
   '
+
+--
+redis-cli ping
+redis-cli
+ping
+set mykey somevalue 
+set mykey chtoto 
+get mykey 
+/etc/init.d/redis-server 
+/etc/init.d/redis-server start
+service redis-server restart 
+Redis Destop Manager

@@ -1,0 +1,134 @@
+NodeJS begin!
+
+Нативные обекты javascript
+#Object
+#String
+#Array
+#Date
+#Math
+#...
+DOM
+#document
+#element
+#...
+BOM
+#windows
+#console
+#History
+#XHR
+#LocalStrorage
+ Доступные категории можно разделись на две категории
+ 1- это нативные обекты(обекты встроеные в сам JS)!
+ 2- обекты среды или окружения(DOM and BOM)!
+
+JavaScript в Node.js
+доступны нативные обеты(они доступны вне 
+зависимости от среды выполнения)!Обекты отнасящиеся к HTML и к браузеру 
+в nodeJS не доступны, за исклучением обект console!
+
+Обекты среды nodeJS назвывают node.js API!
+Сюда входят
+#fs
+#net
+#http
+#crypto
+#...
+
+Repl = Read Evaluate Print Loop 
+      чтение—вычисление—вывод-цикл
+
+#Доступ к файловой системе с помощью,
+переменых:
+__dirname//получаем путь к деректории!
+__filename//получаем полный путь 
+к самому файлу!
+
+#process обект доступен глобально -
+каждое приложение NodeJS является экзе-
+мпляром данного обекта.
+свойтва данного обекта:
+process.execPath-возврощает путь выполнения приложения.
+process.version-предостовляет верисию nodeJS
+process.platform-идентифицирюет платформу
+process.argv-возвращает путь к nodeJS 
+	в массиве
+
+пример:
+function getValue(flag) {
+  const index = process.argv.indexOf(flag);
+  return (index > -1) ? process.argv[index + 1] : null;
+}
+
+const message = getValue('-m') || 'Hello';
+const name = getValue('-n') || 'friend';
+
+console.log(`${message}, ${name}`);
+//node .\forTest.js -m Priver -n Vasia
+
+Обект process так же служит для вода вывода 
+данных I/O.
+process.stdin
+process.stdout
+
+Пример:
+const stdin = process.stdin;
+const stdout = process.stdout;
+
+stdout.write('Привет! Как тебя зовут?');
+
+stdin.on('data', input => {
+  const name = input.toString().trim();
+  const reverseName = name.split('').reverse('').join('');
+  stdout.write(`\n ${name}, твое имя наоборот:  ${reverseName}`);
+  process.exit();//если хотим выйти из процесса!
+});
+
+process.on('exit', () => stdout.write('\n\n Удачи в изучении NodeJS'));
+
+#Buffer(обект)- предназначен для хранения времменых данных,
+при перемещениие их из одного места в другое.
+
+#Timers работаю практически так же как и на клиенском javascript!
+
+#Path(модуль) для работы с деректориями
+
+#Fs(модуль) для работы с файловой системой
+
+#Синхронными методами стоит пользоватся когда надо что то загрузить
+на диск, или для пользования консольного приложения где участвует
+один пользователь, там где есть веб сервер и пользова очень много
+стоит использоват асинхронные методы!
+
+#Основной функционал NodeJS разбит на модули!
+которые мы можем импортировать и использовать
+в приложении, модули являются главной состовляющей
+приложений на NodeJS!
+
+модули не доступны глобально, чтобы обратится к ним,
+нам поотребуется написать глобальную функцию
+require!
+пример:
+ const path = require('path');
+ consanta.log(path.besename(__dirname));
+
+полезный метот в модуле path является join()
+который позволяет состовлять путь из строк,
+как это может быть полезным например на windows используется
+обратная касая линия \ а на Mac, Linux простая / 
+решить проблему с разделителем поможет метод join()
+пример:
+ console.log(path.join(__dirname, 'www', 'files', 'uoloads'));
+Результат: Под Windows!
+D:\JSDesktopApp\learnLang\www\files\uoloads
+
+#DRY- Don’t repeat yourself- не повторяй себя!
+
+3 Создание EventEmitter.mp4
+#Express   - это минималистичный и
+гибкий веб-фреймворк для приложений
+Node.js, предоставляющий обширный 
+набор функций. Он значительно упрощает
+маршрутизацию, использование промежуточных
+обработчиков (middleware), обработку
+запросов и отладку. 
+
