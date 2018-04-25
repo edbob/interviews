@@ -1,10 +1,104 @@
-redis-cli ping
-redis-cli
- ping
- set mykey somevalue 
-set mykey chtoto 
-get mykey 
-/etc/init.d/redis-server 
- /etc/init.d/redis-server start
-service redis-server restart 
-Redis Destop Manager
+Cоздание сервера:(ячейки сервера верней! таблицы!...)
+--
+SET connections 10
+    INCR connections => 11
+    INCR connections => 12
+    DEL connections
+    INCR connections => 1
+-
+ SET server:name "fido"
+-
+чтобы посмотреть название сервера
+-
+ GET server:name => "fido"
+Можно задать время по оканчанию
+которого хпанилище будет удолена
+-
+ DEL server:name
+удаляет значение с таблицы!
+-
+FLUHALL
+очещает полнастью все хранилище!!!
+-
+EXISTS server
+если о есть такое 
+если 1 нет такого имени
+-
+ EXPIRE resource:lock 120
+и команда которая следит за временим
+ TTL resource:lock
+--
+ RPUSH, LPUSH, LLEN, LRANGE, LPOP, and RPOP:
+-
+ RPUSH friends "Alice"
+записывает данные в конец списка
+-
+  LPUSH friends "Sam"
+записывает данные в начало списка
+-
+  LRANGE friends 0 -1
+выводит список всех значений с начала и до конца 
+списка значений! где 0 это 1 значение списка и -1
+это последное значения списка!
+-
+  LLEN friends
+вернет текущее количество записей в списке!
+-
+  LPOP friends
+удаляет первое значение в списке 
+и вернет его значение!
+-
+  RPOP friends
+удалит последнее значение в списке 
+и вернет его!
+--
+SADD, SREM, SISMEMBER, SMEMBERS and SUNION.
+
+ SADD superpowers "flight"
+добовляет новое елемент в хранилище и создает новое
+значение в списке, последние значение в списке добовляет
+в начале списка!
+-
+ SREM superpowers "reflexes"
+удаляет значение из списка по имени значения!
+-
+SISMEMBER superpowers "flight"
+проверяет есть ли значение в списке 
+если есть то вернет 1 
+если нет вернет 0
+-
+SMEMBERS superpowers
+возвращает все значения которые есть в таблице!
+-
+SUNION superpowers birdpowers
+возвращает все значения из двух указаных таблиц!
+-
+    ZADD hackers 1940 "Alan Kay"
+    ZADD hackers 1906 "Grace Hopper"
+    ZADD hackers 1953 "Richard Stallman"
+создает таблицу и заполняет значениями
+-
+ZRANGE hackers 0 -1
+выведит все отсортерованые значения по годам!
+--
+Hashes -сохраняем с помощью хешев!
+HSET user:1000 name "John Smith"
+создает таблицу с клучем name значение "John Smith"
+-
+HGETALL user:1000
+сохранение всех данных и вывод их в консоле Redis
+-
+HMSET user:1001 name "Mary Jones" password "hidden" email "mjones@example.com"
+также можно залить все сразу!
+-
+HGET user:1001 name
+выводит значение клуча! 
+-
+HSET user:1000 visits 10
+HINCRBY user:1000 visits 1 //вывод => 11
+увеличет значение на один! 
+HINCRBY user:1000 visits 10 //вывод => 21
+-
+HDEL user:1000 visits
+удалеят клучь по имени!
+-
