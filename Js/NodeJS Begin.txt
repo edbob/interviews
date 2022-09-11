@@ -1,21 +1,21 @@
-NodeJS begin!
+﻿NodeJS begin!
 
-Нативные обекты javascript
+Нативные обекты javascript(Тоесть родные!)
 #Object
 #String
 #Array
 #Date
 #Math
 #...
-DOM
+DOM(Document Object Model)
 #document
 #element
 #...
-BOM
+BOM( Browser Object Model)
 #windows
 #console
 #History
-#XHR
+#XHR(XML Http Request)
 #LocalStrorage
  Доступные категории можно разделись на две категории
  1- это нативные обекты(обекты встроеные в сам JS)!
@@ -123,7 +123,37 @@ D:\JSDesktopApp\learnLang\www\files\uoloads
 
 #DRY- Don’t repeat yourself- не повторяй себя!
 
-3 Создание EventEmitter.mp4
+#Потоковые данные- EventEmitter, Потоки,
+
+fs.createReadStream('lorem.txt')- читаемый поток
+
+fs.createWriteStream('lorem.md')- записываемый поток
+
+input.on('data', part => output.write(part));
+
+третий поток это duplex
+
+пример duplex потока: 
+const fs = require('fs');
+const zlib = require('zlib');
+
+const input = fs.createReadStream('lorem.txt');
+const output = fs.createWriteStream('lorem.md.gz');
+const gzip = zlib.createGzip();
+
+input.pipe(gzip).pipe(output);
+
+class ReadStream {
+    pipe(stream) {
+        this.on('data', part => stream.write(part));
+        return stream;
+    }
+}
+
+читаемы и записываемы потоки можно соеденить,
+вместо того чтобы подписыватся на собыетие 'data'!,
+можем воспользоватся методом pipe()!
+//10 HTTP 4 Ответ на POST запросы.mp4
 #Express   - это минималистичный и
 гибкий веб-фреймворк для приложений
 Node.js, предоставляющий обширный 

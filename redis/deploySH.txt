@@ -13,9 +13,12 @@ deploy.sh
   '
 
 --
-redis-cli ping
-redis-cli
-ping
+redis-cli 
+-ping
+-KEYS "*" покажет все id
+-MONITOR будет монеторить все события в db
+
+--
 set mykey somevalue 
 set mykey chtoto 
 get mykey 
