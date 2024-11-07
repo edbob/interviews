@@ -1,0 +1,7 @@
+Лямбда-выражения - это функции без имени, которые быстро создаются и используются.
+Они записываются всего в одну строку с использованием ключевого 
+слова lambda и часто используются для небольших, простых задач.
+
+Lambda expressions are functions without a name that are quick to create and use.
+They are written in just one line using the lambda keyword and are often used for small, 
+simple tasks.
